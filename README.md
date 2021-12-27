@@ -1,33 +1,88 @@
-# Turborepo + Strpai + Next.js
 
-A Turborepo with Strapi (w/ postgres database) + Next.js powered by Docker and docker-compose.
 
-<br/>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/6602723/147492045-644eb08a-a933-42bf-bf30-1485db455da3.png" width="150">
+</p>
 
-### ⚠️ Prerequisites of using `docker` and `docker-compose`
+<h1 align="center">Turborepo + Strapi + Next.js + Docker</h1>
+
+<p align="center">A Turborepo with Strapi (w/ postgres database) + Next.js powered by docker and docker-compose.</h1>
+
+## ⚠️ Prerequisites
+
 
 Please make sure you have Docker and docker-compose installed in your machine. Please refer here to install them :
 
 1. [Docker](https://docs.docker.com/engine/install/) installation
 2. [Docker compose](https://docs.docker.com/compose/install/) installation
 
-<br/>
-
 ## Getting Started
 
-### ⚙️ Set up strapi configuration (`.env`) :
+1. Clone this repository :
 
-1. Change directory to our strapi application
+```bash
+git clone https://github.com/Elvincth/turbo-strapi-nextjs
+```
+
+2. Change directory
+
+```bash
+cd turbo-strapi-nextjs
+```
+
+### Setup strapi configuration (`.env`) :
+
+3. Change directory to our strapi application
+
 ```bash
 cd apps/backend`
 ```
 
-2. Create a .env file which stores application configuration, based on the .env.example file:
+4. Create a .env file which stores strapi and postgres configuration, based on the .env.example file:
+
 ```bash
 cp .env.example .env
 ```
 
-3. Run 
+5. Define the admin JWT Token
+
+   > In order to make the admin login work you need to define the secret you want to use in `.env` file
+
+Generate a secure token:
+
+```bash
+openssl rand 64 | base64 # (linux/macOS users)
+# or
+node -e "console.log(require('crypto').randomBytes(64).toString('base64'))" # (all users)
+```
+
+Add it to your env variables (`apps/backend/.env`):
+
+```bash
+ADMIN_JWT_SECRET=token_generated_above
+```
+
+## Develop
+
+To develop all apps and packages, run the following command (in the project root):
+
+```bash
+docker-compose up -d
+```
+
+## Build
+
+To build all apps and packages, run the following commands:
+
+```bash
+docker exec -it strapi_nextjs_turbo /bin/sh
+```
+
+Then run:
+
+```bash
+yarn build
+```
 
 ## What's inside?
 
@@ -50,31 +105,15 @@ This turborepo has some additional tools already setup for you:
 - [Jest](https://jestjs.io) test runner for all things JavaScript
 - [Prettier](https://prettier.io) for code formatting
 
-## Setup
-
-This repository is used in the `npx create-turbo` command, and selected when choosing which package manager you wish to use with your monorepo (Yarn).
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-yarn run build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-yarn run dev
-```
-
 ### Remote Caching
 
 Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo.org/docs/features/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
 
 By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+
+```bash
+docker exec -it strapi_nextjs_turbo /bin/sh
+```
 
 ```
 npx turbo login
@@ -98,3 +137,9 @@ Learn more about the power of Turborepo:
 - [Scoped Tasks](https://turborepo.org/docs/features/scopes)
 - [Configuration Options](https://turborepo.org/docs/reference/configuration)
 - [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
+-
+
+## Credits
+
+- [strapi-dockerize](https://github.com/kevinadhiguna/strapi-dockerize)
+- [nextjs-strapi-boilerplate](https://github.com/kevinadhiguna/strapi-dockerize)
