@@ -6,7 +6,7 @@
 
 <h1 align="center">Turborepo + Strapi + Next.js + Docker</h1>
 
-<p align="center">A Turborepo with Strapi (w/ postgres database) + Next.js powered by docker and docker-compose.</h1>
+<p align="center">A Turborepo with Strapi v4 (w/ postgres database) + Next.js powered by docker and docker-compose.</h1>
 
 ## ⚠️ Prerequisites
 
