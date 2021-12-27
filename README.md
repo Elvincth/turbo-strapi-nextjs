@@ -15,23 +15,19 @@ Please make sure you have Docker and docker-compose installed in your machine. P
 
 ## Getting Started
 
-1. Go to `apps/backend/config/database.js` :
-
-2. Change directory
-
-```bash
-cd turbo-strapi-nextjs
-```
-
 ### ⚙️ Set up strapi configuration (`.env`) :
 
-#### _DATABASE_HOST_
-
-If you run your database locally or in your computer, fill :<br />
-
+1. Change directory to our strapi application
 ```bash
-DATABASE_HOST=127.0.0.1
+cd apps/backend`
 ```
+
+2. Create a .env file which stores application configuration, based on the .env.example file:
+```bash
+cp .env.example .env
+```
+
+3. Run 
 
 ## What's inside?
 

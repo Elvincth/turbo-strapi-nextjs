@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 services:
   db:
     container_name: db
@@ -6,9 +6,11 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: strapi
-      POSTGRES_USER: strapi
-      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    env_file:
+        - ./apps/backend/.env
     volumes:
       - ./db-data/:/var/lib/postgresql/data
     restart: unless-stopped
@@ -24,7 +26,7 @@ services:
       - "3000:3000"
       - "1337:1337"
     environment:
-      - STRAPI_VERSION=4.0.2
+      - STRAPI_VERSION=4.0.2 #specify your strapi version here (need to be same as package.json)
     volumes:
       - ./:/app/
        # Just specify a path and let the Engine create a volume
