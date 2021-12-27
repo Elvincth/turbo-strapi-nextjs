@@ -12,6 +12,7 @@ services:
     volumes:
       - ./db-data/:/var/lib/postgresql/data
     restart: unless-stopped
+    
 
   #turborepo
   turbo:

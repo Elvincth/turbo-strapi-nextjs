@@ -1,6 +1,37 @@
-# Turborepo starter
+# Turborepo + Strpai + Next.js
 
-This is an official Yarn v1 starter turborepo.
+A Turborepo with Strapi (w/ postgres database) + Next.js powered by Docker and docker-compose.
+
+<br/>
+
+### ⚠️ Prerequisites of using `docker` and `docker-compose`
+
+Please make sure you have Docker and docker-compose installed in your machine. Please refer here to install them :
+
+1. [Docker](https://docs.docker.com/engine/install/) installation
+2. [Docker compose](https://docs.docker.com/compose/install/) installation
+
+<br/>
+
+## Getting Started
+
+1. Go to `apps/backend/config/database.js` :
+
+2. Change directory
+
+```bash
+cd turbo-strapi-nextjs
+```
+
+### ⚙️ Set up strapi configuration (`.env`) :
+
+#### _DATABASE_HOST_
+
+If you run your database locally or in your computer, fill :<br />
+
+```bash
+DATABASE_HOST=127.0.0.1
+```
 
 ## What's inside?
 
@@ -8,13 +39,11 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package ma
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `frontend`: a [Next.js](https://nextjs.org) app
+- `backend`: [Strapi](https://strapi.io/) app
+- `ui`: a stub React component library currently used by `frontend` application
 - `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ### Utilities
 
@@ -34,7 +63,6 @@ This repository is used in the `npx create-turbo` command, and selected when cho
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
 yarn run build
 ```
 
@@ -43,7 +71,6 @@ yarn run build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
 yarn run dev
 ```
 
@@ -54,7 +81,6 @@ Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo
 By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
 
 ```
-cd my-turborepo
 npx turbo login
 ```
 
