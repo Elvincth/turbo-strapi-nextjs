@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  db:
+    container_name: db
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+    volumes:
+      - ./db-data/:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  #turborepo
+  turbo:
+    container_name: strapi_nextjs_turbo
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    ports:
+      - "3000:3000"
+      - "1337:1337"
+    environment:
+      - STRAPI_VERSION=4.0.2
+    volumes:
+      - ./:/app/
+       # Just specify a path and let the Engine create a volume
+      - /app/node_modules/
+    restart: on-failure
+
+networks:
+  turbo-network:
+    driver: bridge
