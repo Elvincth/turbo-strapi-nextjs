@@ -6,7 +6,7 @@ services:
     ports:
       - "5432:5432"
     env_file:
-        - ./apps/backend/.env
+        - ./apps/backend/.env #shared env file with strapi application 
     volumes:
       - ./db-data/:/var/lib/postgresql/data
     restart: unless-stopped
