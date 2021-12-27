@@ -35,7 +35,7 @@ cd turbo-strapi-nextjs
 3. Change directory to our strapi application
 
 ```bash
-cd apps/backend`
+cd apps/backend
 ```
 
 4. Create a .env file which stores strapi and postgres configuration, based on the .env.example file:
