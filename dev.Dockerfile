@@ -8,8 +8,6 @@ RUN yarn global add turbo
 #add strapi
 RUN yarn global add @strapi/strapi@${STRAPI_VERSION}
 
-ENV NODE_ENV development
-
 # Set working directory
 WORKDIR /app
 
