@@ -142,3 +142,8 @@ Learn more about the power of Turborepo:
 
 - [strapi-dockerize](https://github.com/kevinadhiguna/strapi-dockerize)
 - [nextjs-strapi-boilerplate](https://github.com/kevinadhiguna/strapi-dockerize)
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
