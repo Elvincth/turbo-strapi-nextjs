@@ -141,4 +141,4 @@ Learn more about the power of Turborepo:
 ## Credits
 
 - [strapi-dockerize](https://github.com/kevinadhiguna/strapi-dockerize)
-- [nextjs-strapi-boilerplate](https://github.com/kevinadhiguna/strapi-dockerize)
+- [nextjs-strapi-boilerplate](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate)
