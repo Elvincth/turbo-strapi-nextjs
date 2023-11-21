@@ -1,8 +1,7 @@
-# Samuel Ross Lee Blog
+# TurboRepo Fork
 
-<h1 align="center">Turborepo + Strapi + Next.js + Docker</h1>
-
-<p align="center">A Turborepo with Strapi v4 (w/ postgres database) + Next.js powered by docker and docker-compose.</h1>
+Turborepo + Strapi + Next.js + Docker
+A Turborepo with Strapi v4 (w/ postgres database) + Next.js powered by docker and docker-compose.
 
 ## Prerequisites
 
@@ -16,7 +15,7 @@ Please make sure you have Docker and docker-compose installed in your machine. P
 1. Clone this repository :
 
 ```bash
-git clone https://github.com/Elvincth/turbo-strapi-nextjs
+git clone https://github.com/theCompanyDream/turbo-strapi-nextjs
 ```
 
 2. Change directory
@@ -25,7 +24,7 @@ git clone https://github.com/Elvincth/turbo-strapi-nextjs
 cd turbo-strapi-nextjs
 ```
 
-### Setup strapi configuration (`.env`) :
+### Setup strapi configuration (`.env`):
 
 3. Change directory to our strapi application
 
