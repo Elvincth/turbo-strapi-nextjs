@@ -6,18 +6,18 @@ services:
     ports:
       - "5432:5432"
     env_file:
-        - ./apps/backend/.env #shared env file with strapi application 
+      # shared env file with strapi application
+        - ./apps/backend/.env
     volumes:
       - ./db-data/:/var/lib/postgresql/data
     restart: unless-stopped
-    
+
 
   #turborepo
   turbo:
     container_name: strapi_nextjs_turbo
     build:
-      context: .
-      dockerfile: dev.Dockerfile
+      context: ./apps/backend
     ports:
       - "3000:3000"
       - "1337:1337"
