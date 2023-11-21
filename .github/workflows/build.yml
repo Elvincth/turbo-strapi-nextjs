@@ -1,0 +1,21 @@
+name: Yarn CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  yarn:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Unlock secrets
+      run: yarn lint
+    - name: Build format
+      run: yarn format
+    - name: Build turbo Image
+      run: yarn build
+    - name: Run Docker
+      run: yarn dev:docker
