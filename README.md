@@ -1,6 +1,6 @@
-# TurboRepo Fork
+# SuperDuper TurpboRepo
 
-Turborepo + Strapi + Next.js + Docker
+Turborepo + Strapi + Next.js + Tailwind + Docker
 A Turborepo with Strapi v4 (w/ postgres database) + Next.js powered by docker and docker-compose.
 
 ## Prerequisites
